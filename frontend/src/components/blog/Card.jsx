@@ -29,7 +29,7 @@ export const Card = ({ posts }) => {
                 <div className='date'>
                   <AiOutlineClockCircle className='icon' /> <label htmlFor=''>{new Date(item.createdAt).toDateString()}</label>
                   <AiOutlineComment className='icon' /> <label htmlFor=''>27</label>
-                  <AiOutlineShareAlt className='icon' /> <label htmlFor=''>SHARE</label>
+                  <AiOutlineShareAlt className='icon' /> <label htmlFor=''>Compartilhar</label>
                 </div>
               </div>
             </div>

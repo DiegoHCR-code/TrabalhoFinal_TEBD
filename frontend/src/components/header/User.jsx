@@ -38,23 +38,23 @@ export const User = () => {
                     </div>
                     <div className='text'>
                       <h4>{user.username}</h4>
-                      <label>Los Angeles, CA</label>
+                      <label>Monte Carmelo, MG</label>
                     </div>
                   </div>
                 </Link>
                 <Link to='/create'>
                   <button className='box'>
                     <RiImageAddLine className='icon' />
-                    <h4>Create Post</h4>
+                    <h4>Criar Post</h4>
                   </button>
                 </Link>
                 <button className='box'>
                   <IoSettingsOutline className='icon' />
-                  <h4>My Account</h4>
+                  <h4>Minha conta</h4>
                 </button>
                 <button className='box'>
                   <BsBagCheck className='icon' />
-                  <h4>My Order</h4>
+                  <h4>Meu pedido</h4>
                 </button>
                 <button className='box'>
                   <AiOutlineHeart className='icon' />
@@ -66,14 +66,14 @@ export const User = () => {
                 </button>
                 <button className='box' onClick={handleLogout}>
                   <BiLogOut className='icon' />
-                  {user && <h4>Log Out</h4>}
+                  {user && <h4>Sair</h4>}
                 </button>
               </div>
             )}
           </>
         ) : (
           <Link to='/login'>
-            <button>My Account</button>
+            <button>Minha conta</button>
           </Link>
         )}
       </div>

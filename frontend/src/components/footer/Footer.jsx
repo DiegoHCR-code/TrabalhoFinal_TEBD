@@ -8,12 +8,8 @@ export const Footer = () => {
     <>
       <footer className='boxItems'>
         <div className='container flex'>
-          <p>Cartsy Medicine - All right reserved - Design & Developed by RedQ, Inc</p>
+          <p>Diego, Isadora, Lucas e Pablo</p>
           <div className='social'>
-            <BsFacebook className='icon' />
-            <RiInstagramFill className='icon' />
-            <AiFillTwitterCircle className='icon' />
-            <AiFillLinkedin className='icon' />
           </div>
         </div>
       </footer>

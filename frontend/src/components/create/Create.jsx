@@ -56,7 +56,7 @@ export const Create = () => {
             </div>
             <input type='text' placeholder='Title' onChange={(e) => setTitle(e.target.value)} />
             <textarea name='' id='' cols='30' rows='10' onChange={(e) => setDesc(e.target.value)}></textarea>
-            <button className='button'>Create Post</button>
+            <button className='button'>Criar Post</button>
           </form>
         </div>
       </section>
