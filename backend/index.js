@@ -1,59 +1,59 @@
-//---- step : 1.1
-const express = require("express")
-const app = express()
-const dotenv = require("dotenv")
-const mongoose = require("mongoose")
+const express = require("express");
+const app = express();
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const multer = require("multer");
+const path = require("path");
+const authRoute = require("./routes/auth");
+const authUser = require("./routes/user");
+const authPost = require("./routes/posts");
+const authCat = require("./routes/categories");
 
-//---- step : 3
-const multer = require("multer")
-const path = require("path")
+dotenv.config();
 
-//---- step : 2.1
-const authRoute = require("./routes/auth")
-const authUser = require("./routes/user")
-const authPost = require("./routes/posts")
-const authCat = require("./routes/categories")
+app.use(express.json());
+app.use("/images", express.static(path.join(__dirname, "/images")));
 
-//---- step : 1
-dotenv.config()
-//---- step : 2.2
-app.use(express.json())
-//---- step : 2.3 last ma file crate garne time
-app.use("/images", express.static(path.join(__dirname, "/images")))
+if (!process.env.CONNECTION_URL) {
+  console.error('A variável de ambiente CONNECTION_URL não está definida.');
+  process.exit(1);
+}
 
-//---- step : 1.3
 mongoose
   .connect(process.env.CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    /*  useCreateIndex: true,
-    useFindAndModify: true,*/
   })
-  .then(console.log("Connected to MongoDB"))
-  .catch((err) => console.log(err))
+  .then(() => {
+    console.log('Conectado ao MongoDB');
+    // Inicie o servidor Express somente após a conexão com o MongoDB ser estabelecida com sucesso
+    const PORT = 5350;
+    app.listen(PORT, () => {
+      console.log(`Servidor em execução na porta ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('Erro ao conectar ao MongoDB:', err);
+  });
 
-//---- step : 3
 const storage = multer.diskStorage({
   destination: (req, file, callb) => {
-    callb(null, "images")
+    callb(null, "images");
   },
   filename: (req, file, callb) => {
-    //callb(null, "file.png")
-    callb(null, req.body.name)
+    callb(null, req.body.name);
   },
-})
-const upload = multer({ storage: storage })
+});
+const upload = multer({ storage: storage });
 app.post("/upload", upload.single("file"), (req, res) => {
-  res.status(200).json("File has been uploaded")
-})
+  res.status(200).json("File has been uploaded");
+});
 
-//---- step : 2
-app.use("/auth", authRoute)
-app.use("/users", authUser)
-app.use("/posts", authPost)
-app.use("/category", authCat)
+app.use("/auth", authRoute);
+app.use("/users", authUser);
+app.use("/posts", authPost);
+app.use("/category", authCat);
 
-//---- step : 1.2
-app.listen("5000", () => {
-  console.log("backend running...")
-})
+app.listen(5000, () => {
+  console.log("backend running...");
+});
