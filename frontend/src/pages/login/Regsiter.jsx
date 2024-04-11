@@ -30,23 +30,23 @@ export const Regsiter = () => {
           <div className='backImg'>
             <img src={back} alt='' />
             <div className='text'>
-              <h3>Register</h3>
-              <h1>My account</h1>
+              <h3>Registrar</h3>
+              <h1>Minha conta</h1>
             </div>
           </div>
 
           <form onSubmit={handleSubmit}>
-            <span>Username *</span>
+            <span>Usuário *</span>
             <input type='text' required onChange={(e) => setUsername(e.target.value)} />
-            <span>Email address *</span>
+            <span>Email*</span>
             <input type='email' required onChange={(e) => setEmail(e.target.value)} />
-            <span>Password *</span>
+            <span>Senha *</span>
             <input type='password' required onChange={(e) => setPassword(e.target.value)} />
             <button type='submit' className='button'>
-              Register
+              Registrar
             </button>
           </form>
-          {error && <span>Someting went wrong</span>}
+          {error && <span>Alguma coisas deu errado!</span>}
         </div>
       </section>
     </>

@@ -34,21 +34,21 @@ export const Login = () => {
             <img src={back} alt='' />
             <div className='text'>
               <h3>Login</h3>
-              <h1>My account</h1>
+              <h1>Minha conta</h1>
             </div>
           </div>
 
           <form onSubmit={handleSubmit}>
-            <span>Username or email address *</span>
+            <span>Usuário ou email *</span>
             <input type='text' required ref={userRef} />
-            <span>Password *</span>
+            <span>Senha *</span>
             <input type='password' required ref={passRef} />
             <button className='button' type='submit' disabled={FetchData}>
-              Log in
+              Logar
             </button>
 
             <Link to='/register' className='link'>
-              Register
+              Registrar
             </Link>
           </form>
         </div>

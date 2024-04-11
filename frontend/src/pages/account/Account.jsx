@@ -51,7 +51,7 @@ export const Account = () => {
     <>
       <section className='accountInfo'>
         <div className='container boxItems'>
-          <h1>Account Information</h1>
+          <h1>Informações da conta</h1>
           <div className='content'>
             <div className='left'>
               <div className='img flexCenter'>
@@ -63,16 +63,16 @@ export const Account = () => {
               </div>
             </div>
             <form className='right' onSubmit={handleSubmit}>
-              <label htmlFor=''>Username</label>
+              <label htmlFor=''>Usuário</label>
               <input type='text' placeholder={user.username} onChange={(e) => setUsername(e.target.value)} />
               <label htmlFor=''>Email</label>
               <input type='email' placeholder={user.email} onChange={(e) => setEmail(e.target.value)} />
-              <label htmlFor=''>Password</label>
+              <label htmlFor=''>Senha</label>
               <input type='password' onChange={(e) => setPassword(e.target.value)} />
               <button className='button' type='submit'>
-                Update
+                Atualizar
               </button>
-              {succ && <span>Profile is Updated</span>}
+              {succ && <span>Perfil atualizado</span>}
             </form>
           </div>
         </div>

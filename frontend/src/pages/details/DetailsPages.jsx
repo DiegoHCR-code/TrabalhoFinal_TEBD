@@ -70,7 +70,7 @@ export const DetailsPages = () => {
                 </button>
                 {update && (
                   <button className='button' onClick={handleUpdate}>
-                    Update
+                    Atualizar
                   </button>
                 )}
               </div>
@@ -80,7 +80,7 @@ export const DetailsPages = () => {
             {update ? <textarea value={desc} cols='30' rows='10' className='updateInput' onChange={(e) => setDesc(e.target.value)}></textarea> : <p>{post.desc}</p>}
 
             <p>
-              Author: <Link to={`/?user=${post.username}`}>{post.username}</Link>
+              Autor: <Link to={`/?user=${post.username}`}>{post.username}</Link>
             </p>
           </div>
         </div>

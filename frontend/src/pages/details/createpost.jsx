@@ -58,7 +58,7 @@ export const DetailsPages = () => {
             <p>{post.desc}</p>
 
             <p>
-              Author: <Link to={`/?user=${post.username}`}>{post.username}</Link>
+              Autor: <Link to={`/?user=${post.username}`}>{post.username}</Link>
             </p>
           </div>
         </div>
